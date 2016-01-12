@@ -1,0 +1,39 @@
+{
+  "name": "justo-plugin-xtestx",
+  "version": "0.1.2",
+  "description": "Package to test justo-plugin-npm.",
+  "homepage": "http://www.justojs.org",
+  "author": {
+    "name": "The Justo.js Development Group",
+    "email": "justojs.org@outlook.com",
+    "url": "http://www.justojs.org"
+  },
+  "contributors": [
+    {
+      "name": "Raúl G. González",
+      "email": "raulggonzalezsw@outlook.com",
+      "url": ""
+    }
+  ],
+  "keywords": [
+    "Justo",
+    "Justo.js",
+    "justo-plugin"
+  ],
+  "engines": {
+    "node": ">=4.0.0",
+    "npm": ">=3.0.0"
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {},
+  "preferGlobal": false,
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "justo test"
+  },
+  "license": "MIT"
+}
