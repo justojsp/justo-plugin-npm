@@ -1,6 +1,6 @@
 {
   "name": "justo-plugin-npm",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple tasks to run the npm command.",
   "homepage": "http://www.justojs.org",
   "author": {

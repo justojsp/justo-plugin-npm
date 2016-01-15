@@ -17,6 +17,7 @@ publish;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj
 
 
   if (config.dir) config.folder = config.dir;
+  if (config.src) config.folder = config.src;
 
   if (!config.folder) throw new Error("Expected package folder path.");
   if (!config.hasOwnProperty("output")) config.output = true;

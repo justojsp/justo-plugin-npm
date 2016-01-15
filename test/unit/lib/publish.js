@@ -12,21 +12,21 @@ suite("#publish()", function() {
     publish.must.raise("Expected package folder path.", [[]]);
   });
 
-  test("publish({who, folder}) - unknown npm user", function() {
-    publish.must.raise(/'who' must be 'unknown'\. Received: '.+'\./, [[{who: "unknown", folder: path.join(DATA_DIR, "justo-plugin-xtestx")}]]);
+  test("publish({who, src}) - unknown npm user", function() {
+    publish.must.raise(/'who' must be 'unknown'\. Received: '.+'\./, [[{who: "unknown", src: path.join(DATA_DIR, "justo-plugin-xtestx")}]]);
   });
 
-  test({name: "publish({who, folder})", ignore: process.env["TRAVIS"]}, function() {
+  test({name: "publish({who, src})", ignore: process.env["TRAVIS"]}, function() {
     publish([{
       who: "justojs",
-      folder: path.join(DATA_DIR, "justo-plugin-xtestx")
+      src: path.join(DATA_DIR, "justo-plugin-xtestx")
     }]);
   });
 
   test({name: "publish({who, folder, output: false})", ignore: process.env["TRAVIS"]}, function() {
     publish([{
       who: "justojs",
-      folder: path.join(DATA_DIR, "justo-plugin-xtestx"),
+      src: path.join(DATA_DIR, "justo-plugin-xtestx"),
       output: false
     }]);
   });
