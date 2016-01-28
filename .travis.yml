@@ -8,6 +8,8 @@ node_js:
   - 5.5
 os:
   - linux
+env:
+  - TRAVIS=true
 sudo: false
 before_install: npm install -g justo-cli
 install: npm install

@@ -12,7 +12,7 @@ suite("#publish()", function() {
     publish.must.raise("Expected package folder path.", [[]]);
   });
 
-  test("publish({who, src}) - unknown npm user", function() {
+  test({name: "publish({who, src}) - unknown npm user", ignore: process.env["TRAVIS"] == "true"}, function() {
     publish.must.raise(/'who' must be 'unknown'\. Received: '.+'\./, [[{who: "unknown", src: path.join(DATA_DIR, "justo-plugin-xtestx")}]]);
   });
 
