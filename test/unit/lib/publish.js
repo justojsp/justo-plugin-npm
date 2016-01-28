@@ -16,14 +16,14 @@ suite("#publish()", function() {
     publish.must.raise(/'who' must be 'unknown'\. Received: '.+'\./, [[{who: "unknown", src: path.join(DATA_DIR, "justo-plugin-xtestx")}]]);
   });
 
-  test({name: "publish({who, src})", ignore: process.env["TRAVIS"]}, function() {
+  test({name: "publish({who, src})", ignore: process.env["TRAVIS"] == "true"}, function() {
     publish([{
       who: "justojs",
       src: path.join(DATA_DIR, "justo-plugin-xtestx")
     }]);
   });
 
-  test({name: "publish({who, folder, output: false})", ignore: process.env["TRAVIS"]}, function() {
+  test({name: "publish({who, folder, output: false})", ignore: process.env["TRAVIS"] == "true"}, function() {
     publish([{
       who: "justojs",
       src: path.join(DATA_DIR, "justo-plugin-xtestx"),
