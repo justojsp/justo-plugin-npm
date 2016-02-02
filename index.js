@@ -6,9 +6,9 @@ const NS = "org.justojs.plugin.npm";
 var publish;
 
 //api
-export default {
+module.exports = {
   get publish() {
-    if (!publish) publish = simple({ns: NS, name: "publish"}, require("./lib/publish"));
+    if (!publish) publish = simple({ns: NS, name: "publish"}, require("./lib/publish").default);
     return publish;
   }
 };

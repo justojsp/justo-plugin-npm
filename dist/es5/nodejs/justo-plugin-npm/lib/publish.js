@@ -1,11 +1,11 @@
-"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports["default"] = 
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
 
 
 
-publish;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { "default": obj };}var _os = require("os");var _os2 = _interopRequireDefault(_os);var _child_process = require("child_process");var _child_process2 = _interopRequireDefault(_child_process);function publish(params) {
+publish;var _os = require("os");var _os2 = _interopRequireDefault(_os);var _child_process = require("child_process");var _child_process2 = _interopRequireDefault(_child_process);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function publish(params) {
   var cmd, config, res;
 
 
@@ -23,12 +23,12 @@ publish;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj
   if (!config.hasOwnProperty("output")) config.output = true;
 
 
-  if (/^win/.test(_os2["default"].platform())) cmd = "npm.cmd";else 
+  if (/^win/.test(_os2.default.platform())) cmd = "npm.cmd";else 
   cmd = "npm";
 
 
   if (config.who) {
-    var _res = _child_process2["default"].spawnSync(cmd, ["who"]);
+    var _res = _child_process2.default.spawnSync(cmd, ["who"]);
     if (_res.status) throw new Error(_res.stdout.toString());
 
     if (_res.stdout.toString() != config.who + "\n") {
@@ -37,10 +37,10 @@ publish;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj
 
 
 
-  res = _child_process2["default"].spawnSync(cmd, ["publish", config.folder]);
+  res = _child_process2.default.spawnSync(cmd, ["publish", config.folder]);
 
   if (config.output) console.log(res.stdout.toString());
   if (res.status) throw new Error(res.stdout.toString());
 
 
-  return res.status;}module.exports = exports["default"];
+  return res.status;}

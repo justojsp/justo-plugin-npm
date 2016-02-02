@@ -2,7 +2,7 @@
 const path = require("path");
 const suite = require("justo").suite;
 const test = require("justo").test;
-const publish = require("../../../dist/es5/nodejs/justo-plugin-npm/lib/publish");
+const publish = require("../../../dist/es5/nodejs/justo-plugin-npm/lib/publish").default;
 
 //suite
 suite("#publish()", function() {
