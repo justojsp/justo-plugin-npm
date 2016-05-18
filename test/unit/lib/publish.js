@@ -12,22 +12,22 @@ suite("#publish()", function() {
     publish.must.raise("Expected package folder path.", [[]]);
   });
 
-  test({name: "publish({who, src}) - unknown npm user", ignore: process.env["TRAVIS"] == "true"}, function() {
+  test({name: "publish({who, src}) - unknown npm user", ignore: process.env.TRAVIS == "true"}, function() {
     publish.must.raise(/'who' must be 'unknown'\. Received: '.+'\./, [[{who: "unknown", src: path.join(DATA_DIR, "justo-plugin-xtestx")}]]);
   });
 
-  test({name: "publish({who, src})", ignore: process.env["TRAVIS"] == "true"}, function() {
+  test({name: "publish({who, src})", ignore: process.env.TRAVIS == "true"}, function() {
     publish([{
       who: "justojs",
       src: path.join(DATA_DIR, "justo-plugin-xtestx")
-    }]);
+    }], console);
   });
 
-  test({name: "publish({who, folder, output: false})", ignore: process.env["TRAVIS"] == "true"}, function() {
+  test({name: "publish({who, folder, output: false})", ignore: process.env.TRAVIS == "true"}, function() {
     publish([{
       who: "justojs",
       src: path.join(DATA_DIR, "justo-plugin-xtestx"),
       output: false
-    }]);
+    }], console);
   });
 })();

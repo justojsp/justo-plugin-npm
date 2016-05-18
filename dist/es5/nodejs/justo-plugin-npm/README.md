@@ -1,4 +1,7 @@
-[![Build Status](https://travis-ci.org/justojsp/justo-plugin-npm.svg)](https://travis-ci.org/justojsp/justo-plugin-npm)
+[![NPM version](http://img.shields.io/npm/v/justo-plugin-npm.svg)](https://www.npmjs.org/package/justo-plugin-npm)
+[![Build Status](https://travis-ci.org/justojsp/justo-plugin-npm.svg?branch=master)](https://travis-ci.org/justojsp/justo-plugin-npm)
+[![Dependency Status](https://david-dm.org/justojsp/justo-plugin-npm.svg)](https://david-dm.org/justojsp/justo-plugin-npm)
+[![devDependency Status](https://david-dm.org/justojsp/justo-plugin-npm/dev-status.svg)](https://david-dm.org/justojsp/justo-plugin-npm#info=devDependencies)
 
 Plugin for the `npm` command.
 

@@ -1,5 +1,5 @@
-"use strict";var _justo = require("justo");
-
+"use strict";
+var _justo = require("justo");
 
 
 var NS = "org.justojs.plugin.npm";
