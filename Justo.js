@@ -3,20 +3,30 @@ const catalog = require("justo").catalog;
 const babel = require("justo-plugin-babel");
 const clean = require("justo-plugin-fs").clean;
 const copy = require("justo-plugin-fs").copy;
-const jshint = require("justo-plugin-jshint");
+const jslinter = require("justo-plugin-eslint");
 
 //works
-catalog.workflow({name: "build", desc: "Build the package."}, function() {
-  clean("Clean build directory", {
-    dirs: ["build/es5"]
-  });
-
-  jshint("Best practices", {
+const jslint = catalog.simple({
+  name: "jslint",
+  desc: "Parse best practices and grammar (JavaScript).",
+  task: jslinter,
+  params: {
     output: true,
     src: [
       "index.js",
-      "lib/publish.js",
+      "Justo.js",
+      "lib/",
+      "test/unit/index.js",
+      "test/unit/lib/"
     ]
+  }
+});
+
+catalog.workflow({name: "build", desc: "Build the package."}, function() {
+  jslint("Best practices and grammar (JavaScript)");
+
+  clean("Clean build directory", {
+    dirs: ["build/es5"]
   });
 
   babel("Transpile", {
@@ -58,4 +68,4 @@ catalog.macro({name: "test", desc: "Unit test."}, {
   ]
 });
 
-catalog.macro("default", ["build", "test"]);
+catalog.macro({name: "default", desc: "Build and test."}, ["build", "test"]);

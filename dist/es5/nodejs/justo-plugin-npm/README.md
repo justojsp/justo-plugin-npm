@@ -33,6 +33,7 @@ install(opts, config : object)
 The `config` parameter:
 
 - `pkg` (string). The package name or folder.
+- `name` (string). The package name. Alias of `pkg` when package name indicated.
 - `global` (boolean). Install globally? Default: `false`.
 - `output` (boolean). Show the `npm install` output: `true`, yep; `false`, nope. Default: `true`.
 
@@ -42,7 +43,12 @@ Example:
 const install = require("justo-plugin-npm").install;
 
 install("Install package", {
-  pkg: "dist/es5/node/justo-generator-bootstrap/",
+  pkg: "dist/es5/node/justo-generator-horizon/",
+  global: true
+});
+
+install("Install horizon package", {
+  name: "horizon",
   global: true
 });
 ```
